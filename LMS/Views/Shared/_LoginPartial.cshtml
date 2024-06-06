@@ -1,0 +1,21 @@
+﻿﻿@using Microsoft.AspNetCore.Identity @* vista parcial de login donde se define si esta autorizado muestre el nombre de la persona guardado en l acookie  *@
+
+<ul class="navbar-nav">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <li class="nav-item">
+            <a class="nav-link text-White" asp-area="" asp-page="" title="Usuario">Hola @User.Claims.First().Value !</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-White" asp-controller="Account" asp-action="Logout" title="Logoff">Salir</a>
+
+        </li>
+    }
+    else
+    {
+
+        <li class="nav-item">
+            <a class="nav-link text-White" asp-controller="Account" asp-action="Login">Ingreso</a>
+        </li>
+    }
+</ul>

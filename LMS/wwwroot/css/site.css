@@ -1,0 +1,298 @@
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dropdown1 {
+    float: left;
+    overflow: hidden;
+}
+
+    .dropdown1 .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: black;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
+
+.dropdown1-content {
+    display: none;
+    position: absolute;
+    background-color: #5e91a9b0 !important;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+@media (min-width: 576px) {
+    .navbar-expand-sm > .container,
+    .navbar-expand-sm > .container-fluid {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+}
+
+
+.dropdown1-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+    .dropdown1-content a:hover {
+        background-color: cadetblue;
+    }
+
+.dropdown1:hover .dropdown1-content {
+    display: block;
+}
+
+.flex-container > .flx {
+    background-color: rgb(33 42 70 / 73%);
+    width: 30%;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+}
+
+.card {
+    background: none;
+}
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+
+    .table {
+        padding: 0px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background: Url("https://img.freepik.com/foto-gratis/fondo-azul-degradado-lujo-abstracto-azul-oscuro-liso-banner-estudio-vineta-negra_1258-52379.jpg");
+    background-size: cover;
+    color: white !important;
+}
+
+.table {
+    color: white;
+    background: #121c3a94;
+    box-sizing: border-box;
+    border-radius: 10PX;
+}
+
+.footer {
+    
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+@media (max-width:600px) {
+    .flex-container > .flx {
+        background-color: rgb(33 42 70 / 73%);
+        width: 100%;
+        margin: 10px;
+        text-align: center;
+        line-height: 75px;
+    }
+}
+
+@media (max-width:800px ) and (min-width:600px) {
+    .flex-container > .flx {
+        background-color: rgb(33 42 70 / 73%);
+        width: 45%;
+        margin: 10px;
+        text-align: center;
+        line-height: 75px;
+    }
+}
+
+
+
+.slide2 {
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
+}
+
+    .slide2 ul {
+        display: flex;
+        padding: 0;
+        width: 600%;
+        animation: cambio2 60s infinite;
+    }
+
+    .slide2 li {
+        width: 100%;
+        list-style: none;
+    }
+
+    .slide2 img {
+        width: 100%;
+    }
+
+
+@keyframes cambio2 {
+    0% {
+        margin-left: 0;
+    }
+
+    15% {
+        margin-left: 0;
+    }
+
+    17% {
+        margin-left: -100%;
+    }
+
+    31% {
+        margin-left: -100%;
+    }
+
+    33% {
+        margin-left: -200%;
+    }
+
+    47% {
+        margin-left: -200%;
+    }
+
+    49% {
+        margin-left: -300%;
+    }
+
+    63% {
+        margin-left: -300%;
+    }
+
+    66% {
+        margin-left: -400%;
+    }
+
+    81% {
+        margin-left: -400%;
+    }
+
+    84% {
+        margin-left: -500%;
+    }
+
+    100% {
+        margin-left: -500%;
+    }
+}
+    /*Agregado por kley*/
+
+    #text{
+        width:100px;
+    }
+
+    .formulario {
+    background: white;
+    color: black ;
+    }
+
+    .style {
+
+
+    }
+
+    
+
+.ddic {
+   
+    
+    width: 100%;
+    /* Control de la altura con base en el texto del div*/
+    height: auto;
+    word-wrap: break-word;
+
+}
+
+.overflow-visible {
+    white-space: initial;
+}
+
+.logout{
+    display: flex;
+    flex-flow: column-reverse;
+    justify-items: flex-end;
+    align-items: flex-end;
+}
+
+.orden{
+    display: flex;
+}
+
+.letra {
+    font-size: 85%;
+    font-weight: bold;
+    display: flex;
+}

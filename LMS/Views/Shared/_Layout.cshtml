@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]- LMS </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/fondosymejoras.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand text-White" asp-area="" asp-controller="Home" asp-action="Index">LMS</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+
+                        @if (User.IsInRole("Maestro"))
+                        {
+
+                            <li>
+                                <div class="dropdown1">
+                                    <button class="dropbtn text-White">
+                                        Catalogos
+                                        <i class="fa fa-caret-down">
+                                        </i>
+
+                                    </button>
+
+                                    <div class="dropdown1-content">
+                                        <a class="nav-link text-White" asp-area="" asp-controller="Users" asp-action="Index">Usuarios</a>
+                                        <a class="nav-link text-White" asp-area="" asp-controller="Modules" asp-action="Index">Modulos</a>
+
+                                        <a class="nav-link text-White" asp-area="" asp-controller="ModuleTypes" asp-action="Index">Tipos de Modulo</a>
+
+                                        <a class="nav-link text-White" asp-area="" asp-controller="UserTypes" asp-action="Index">Tipo de usuario</a>
+
+                                        <a class="nav-link text-White" asp-area="" asp-controller="Tests" asp-action="Index">Examen Calificaciones</a>
+
+
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                        else if (User.IsInRole("Estudiante"))
+                        {
+                            <li>
+                                <div class="dropdown1">
+                                    <button class="dropbtn text-White">
+                                        Catalogos
+                                        <i class="fa fa-caret-down">
+                                        </i>
+
+                                    </button>
+
+                                    <div class="dropdown1-content">
+                                        <a class="nav-link text-White" asp-area="" asp-controller="StudenView" asp-action="Index">Modulos Impartidos</a>
+
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <div class="dropdown1">
+                                    <button class="dropbtn text-White">
+                                        Catalogos
+                                        <i class="fa fa-caret-down">
+                                        </i>
+
+                                    </button>
+
+                                    <div class="dropdown1-content">
+                                        <a class="nav-link text-White" asp-area="" asp-controller="Users" asp-action="Index">Quienes somos?</a>
+                                        <a class="nav-link text-White" asp-area="" asp-controller="Home" asp-action="Contactenos">Contacto</a>
+
+
+                                    </div>
+                                </div>
+                            </li>
+                           
+                        }
+
+                      
+
+
+                    </ul>
+                    @* agregamos una vista parcial donde se valida que el suaurio este autentificado  *@
+
+                    <div class="logout">
+                        <partial name="_LoginPartial" />
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer ">
+        <div class="container">
+            &copy; 2022 - LMS
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

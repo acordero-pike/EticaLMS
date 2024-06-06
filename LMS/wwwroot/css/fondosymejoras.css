@@ -1,0 +1,29 @@
+﻿.bg-white {
+    background-color: black !important;
+}
+.text-White
+{
+    color:white !important;
+}
+/*create */
+.form {
+    width: 450px;
+    margin: auto;
+    background: rgba(0,0,0,0.4);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 7px;
+}
+
+.colm {
+    -ms-flex: 0 0 33.333333%;
+    flex: 100;
+    max-width: 100%;
+}
+
+@media (max-width:480px) {
+    .form {
+        width: 100%;
+    }
+}

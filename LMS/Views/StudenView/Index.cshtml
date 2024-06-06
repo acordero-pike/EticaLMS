@@ -1,0 +1,47 @@
+﻿@model IEnumerable<LMS.Models.ModuleType>
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1>View</h1>
+
+
+
+@foreach (var item in Model) {
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+       @foreach(var item2 in item.Modules)
+       {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(m => item2.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item2.Descripcion)
+                    </td>
+                    <td>
+                        <a asp-action="Moduleview" asp-route-id="@item2.Uuid">Ver Mas</a> |
+
+                    </td>
+                </tr>
+
+       }
+
+    </tbody>
+</table>
+<br />
+<br />
+
+}

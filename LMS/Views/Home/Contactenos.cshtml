@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Contactenos";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<link rel="stylesheet" href="~/css/contacto.css" />
+
+
+
+<form action="/contacto" method="post">
+
+    <h2>Contacto</h2>
+    <input type="text" name="Nombre" placeholder="Nombre" required />
+    <input type="text" name="Correo" placeholder="Correo" required />
+    <input type="text" name="Telefono" placeholder="Telefono" />
+    <textarea type="text" name="Mensaje" placeholder="Ingrese el mensaje aqui" required></textarea>
+    <input type="submit" value="Enviar" id="button" />
+    <h2><span class="alert-info" id="msj"> @TempData["succes"]</span></h2>
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+
+        setTimeout(function () { document.querySelector('#msj').innerHTML = ''; }, 3000);
+
+
+    }
+    )
+</script>
