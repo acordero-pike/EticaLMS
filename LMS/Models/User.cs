@@ -5,7 +5,12 @@ namespace LMS.Models
 {
     public partial class User
     {
-        public string? Uuid { get; set; }
+        public User()
+        {
+            Tests = new HashSet<Test>();
+        }
+
+        public string Uuid { get; set; } = null!;
         public string? Nombre { get; set; }
         public string? Apellido { get; set; }
         public string? Usuario { get; set; }
@@ -13,6 +18,6 @@ namespace LMS.Models
         public string? TipoUsuario { get; set; }
 
         public virtual UserType? TipoUsuarioNavigation { get; set; }
-        public virtual Test? Test { get; set; }
+        public virtual ICollection<Test> Tests { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace LMS.Models
             Tests = new HashSet<Test>();
         }
 
-        public string? Uuid { get; set; } 
+        public string Uuid { get; set; } = null!;
         public string? Nombre { get; set; }
         public string? Descripcion { get; set; }
         public string? TipoModulo { get; set; }

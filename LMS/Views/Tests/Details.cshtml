@@ -11,12 +11,6 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Usuario)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Usuario)
-        </dd>
-        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Nota)
         </dt>
         <dd class = "col-sm-10">
@@ -32,13 +26,14 @@
             @Html.DisplayNameFor(model => model.ModuloNavigation)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ModuloNavigation.Uuid)
+            @Html.DisplayFor(model => model.ModuloNavigation.Nombre)
+            @Html.DisplayFor(model => model.ModuloNavigation.TipoModuloNavigation.Nombre)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Uu)
+            @Html.DisplayNameFor(model => model.UsuarioNavigation)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Uu.Uuid)
+            @Html.DisplayFor(model => model.UsuarioNavigation.Nombre)
         </dd>
     </dl>
 </div>

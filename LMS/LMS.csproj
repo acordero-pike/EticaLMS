@@ -7,6 +7,53 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Views\Account\Handle.cshtml" />
+    <None Include="Views\Account\Login.cshtml" />
+    <None Include="Views\Conducta\Module1.cshtml" />
+    <None Include="Views\Conducta\Module2.cshtml" />
+    <None Include="Views\Conducta\Module3.cshtml" />
+    <None Include="Views\Error\Index.cshtml" />
+    <None Include="Views\Etica\Calificar.cshtml" />
+    <None Include="Views\Etica\ExamenM1.cshtml" />
+    <None Include="Views\Etica\Module1.cshtml" />
+    <None Include="Views\Etica\Module2.cshtml" />
+    <None Include="Views\Etica\Module3.cshtml" />
+    <None Include="Views\Home\Contactenos.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Privacy.cshtml" />
+    <None Include="Views\Modules\Create.cshtml" />
+    <None Include="Views\Modules\Delete.cshtml" />
+    <None Include="Views\Modules\Details.cshtml" />
+    <None Include="Views\Modules\Edit.cshtml" />
+    <None Include="Views\Modules\Index.cshtml" />
+    <None Include="Views\ModuleTypes\Create.cshtml" />
+    <None Include="Views\ModuleTypes\Delete.cshtml" />
+    <None Include="Views\ModuleTypes\Details.cshtml" />
+    <None Include="Views\ModuleTypes\Edit.cshtml" />
+    <None Include="Views\ModuleTypes\Index.cshtml" />
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_Layoutlog.cshtml" />
+    <None Include="Views\Shared\_Lerror.cshtml" />
+    <None Include="Views\Shared\_LoginPartial.cshtml" />
+    <None Include="Views\Shared\_Not.cshtml" />
+    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="Views\StudenView\Index.cshtml" />
+    <None Include="Views\Users\Create.cshtml" />
+    <None Include="Views\Users\Delete.cshtml" />
+    <None Include="Views\Users\Details.cshtml" />
+    <None Include="Views\Users\Edit.cshtml" />
+    <None Include="Views\Users\Index.cshtml" />
+    <None Include="Views\UserTypes\Create.cshtml" />
+    <None Include="Views\UserTypes\Delete.cshtml" />
+    <None Include="Views\UserTypes\Details.cshtml" />
+    <None Include="Views\UserTypes\Edit.cshtml" />
+    <None Include="Views\UserTypes\Index.cshtml" />
+    <None Include="Views\_ViewImports.cshtml" />
+    <None Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.29" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.29" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.29">

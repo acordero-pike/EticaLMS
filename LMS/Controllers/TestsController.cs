@@ -24,7 +24,7 @@ namespace LMS.Controllers
         // GET: Tests
         public async Task<IActionResult> Index()
         {
-            var lMSContext = _context.Tests.Include(t => t.ModuloNavigation).Include(t => t.Uu);
+            var lMSContext = _context.Tests.Include(t => t.ModuloNavigation).Include(t => t.UsuarioNavigation);
             return View(await lMSContext.ToListAsync());
         }
 
@@ -38,7 +38,8 @@ namespace LMS.Controllers
 
             var test = await _context.Tests
                 .Include(t => t.ModuloNavigation)
-                .Include(t => t.Uu)
+                .Include(t => t.UsuarioNavigation)
+                  .Include(t => t.ModuloNavigation.TipoModuloNavigation)
                 .FirstOrDefaultAsync(m => m.Uuid == id);
             if (test == null)
             {
@@ -51,8 +52,15 @@ namespace LMS.Controllers
         // GET: Tests/Create
         public IActionResult Create()
         {
-            ViewData["Modulo"] = new SelectList(_context.Modules, "Uuid", "Uuid");
-            ViewData["Uuid"] = new SelectList(_context.Users, "Uuid", "Uuid");
+
+            var m = from a in _context.ModuleTypes join c in _context.Modules on a.Uuid equals c.TipoModulo
+                    select new
+                    {
+                        Uuid = c.Uuid,
+                        Nombre = a.Nombre +" "+ c.Nombre
+                    };
+            ViewData["Modulo"] = new SelectList(m, "Uuid", "Nombre");
+            ViewData["Usuario"] = new SelectList(_context.Users, "Uuid", "Nombre");
             return View();
         }
 
@@ -69,8 +77,16 @@ namespace LMS.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Modulo"] = new SelectList(_context.Modules, "Uuid", "Uuid", test.Modulo);
-            ViewData["Uuid"] = new SelectList(_context.Users, "Uuid", "Uuid", test.Uuid);
+            var m = from a in _context.ModuleTypes
+                    join c in _context.Modules on a.Uuid equals c.TipoModulo
+                    select new
+                    {
+                        Uuid = c.Uuid,
+                        Nombre = a.Nombre + " " + c.Nombre
+                    };
+            ViewData["Modulo"] = new SelectList(m, "Uuid", "Nombre", test.Modulo);
+           
+            ViewData["Usuario"] = new SelectList(_context.Users, "Uuid", "Nombre", test.Usuario);
             return View(test);
         }
 
@@ -87,8 +103,15 @@ namespace LMS.Controllers
             {
                 return NotFound();
             }
-            ViewData["Modulo"] = new SelectList(_context.Modules, "Uuid", "Uuid", test.Modulo);
-            ViewData["Uuid"] = new SelectList(_context.Users, "Uuid", "Uuid", test.Uuid);
+            var m = from a in _context.ModuleTypes
+                    join c in _context.Modules on a.Uuid equals c.TipoModulo
+                    select new
+                    {
+                        Uuid = c.Uuid,
+                        Nombre = a.Nombre + " " + c.Nombre
+                    };
+            ViewData["Modulo"] = new SelectList(m, "Uuid", "Nombre", test.Modulo);
+            ViewData["Usuario"] = new SelectList(_context.Users, "Uuid", "Nombre", test.Usuario);
             return View(test);
         }
 
@@ -124,8 +147,15 @@ namespace LMS.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Modulo"] = new SelectList(_context.Modules, "Uuid", "Uuid", test.Modulo);
-            ViewData["Uuid"] = new SelectList(_context.Users, "Uuid", "Uuid", test.Uuid);
+            var m = from a in _context.ModuleTypes
+                    join c in _context.Modules on a.Uuid equals c.TipoModulo
+                    select new
+                    {
+                        Uuid = c.Uuid,
+                        Nombre = a.Nombre + " " + c.Nombre
+                    };
+            ViewData["Modulo"] = new SelectList(m, "Uuid", "Nombre", test.Modulo);
+            ViewData["Usuario"] = new SelectList(_context.Users, "Uuid", "Nombre", test.Usuario);
             return View(test);
         }
 
@@ -139,7 +169,8 @@ namespace LMS.Controllers
 
             var test = await _context.Tests
                 .Include(t => t.ModuloNavigation)
-                .Include(t => t.Uu)
+                .Include(t => t.UsuarioNavigation)
+                .Include(t => t.ModuloNavigation.TipoModuloNavigation)
                 .FirstOrDefaultAsync(m => m.Uuid == id);
             if (test == null)
             {

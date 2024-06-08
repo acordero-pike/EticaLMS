@@ -43,8 +43,9 @@ namespace LMS.Controllers
             {
                
                 claims.Add(new Claim("username", val.Nombre)); // guardamos el nombre de quien se logea
-                claims.Add(new Claim(ClaimTypes.NameIdentifier, val.Nombre)); //guardamos el tipo de peticion 
+              
                 claims.Add(new Claim(ClaimTypes.Role, val.TipoUsuarioNavigation.Nombre));
+                claims.Add(new Claim(ClaimTypes.NameIdentifier, val.Uuid)); //guardamos el tipo de peticion 
                 var claimIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme); // asignamos esa peticicon a un esquema de cookies
                 var claimprincipal = new ClaimsPrincipal(claimIdentity); // la volvemos peticion principal
 

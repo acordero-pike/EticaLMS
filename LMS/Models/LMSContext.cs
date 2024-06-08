@@ -113,11 +113,10 @@ namespace LMS.Models
                     .HasForeignKey(d => d.Modulo)
                     .HasConstraintName("FK_Test.Modulo");
 
-                entity.HasOne(d => d.Uu)
-                    .WithOne(p => p.Test)
-                    .HasForeignKey<Test>(d => d.Uuid)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Test.UUID");
+                entity.HasOne(d => d.UsuarioNavigation)
+                    .WithMany(p => p.Tests)
+                    .HasForeignKey(d => d.Usuario)
+                    .HasConstraintName("FK_Test.Usuario");
             });
 
             modelBuilder.Entity<User>(entity =>

@@ -10,7 +10,7 @@ namespace LMS.Models
             Modules = new HashSet<Module>();
         }
 
-        public string? Uuid { get; set; } 
+        public string Uuid { get; set; } = null!;
         public string? Nombre { get; set; }
         public string? Descripcion { get; set; }
 
